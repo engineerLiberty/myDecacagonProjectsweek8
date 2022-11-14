@@ -9,6 +9,8 @@ import com.example.week7.services.PostService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PostServiceImpl implements PostService {
     private final UsersRepository usersRepository;
@@ -33,7 +35,10 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public String fetchUserAllPost(Long userId) {
-        return null;
+    public List<Post> findPostByUserId(Long userId) {
+        List<Post>posts = postRepository.findPostByUserId(userId);
+        return posts;
     }
+
+
 }
