@@ -24,7 +24,6 @@ public class TaskDto {
 
     private String completedDate;
 
-    private boolean isComplete = false;
 
 
 

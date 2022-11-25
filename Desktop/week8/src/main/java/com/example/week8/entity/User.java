@@ -3,6 +3,7 @@ package com.example.week8.entity;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.util.List;

@@ -3,6 +3,7 @@ package com.example.week8.entity;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Persister;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
@@ -23,6 +24,8 @@ public class Task {
     @Column(length = 150)
     private String taskDescription;
 
+    private String status;
+
     @CreationTimestamp
     private LocalDate startDate;
 
@@ -32,9 +35,15 @@ public class Task {
     @UpdateTimestamp
     private LocalDate lastUpdated;
 
-    private boolean isComplete;
+    private boolean isComplete= false;
 
    @ManyToOne
    @JoinColumn(name = "userId")
     private User user;
+
+   @PrePersist
+    public void prePersist(){
+       this.status = "In_Progress";
+   }
+
 }

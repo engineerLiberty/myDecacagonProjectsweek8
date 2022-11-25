@@ -49,4 +49,14 @@ public class TaskController {
         taskService.deleteTaskByItId(taskDto);
         return new ResponseEntity<>("Task deleted successfully",HttpStatus.ACCEPTED);
     }
+
+
+    @PostMapping("/updateStatus")
+    public ResponseEntity<String>updateStatus(@RequestBody TaskDto taskDto){
+        Task task = taskService.updateStatus(taskDto);
+        if (task.equals(null)){
+            return new ResponseEntity<>("Could not update task status",HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>("Your task Status was updated successfully",HttpStatus.ACCEPTED);
+    }
 }
