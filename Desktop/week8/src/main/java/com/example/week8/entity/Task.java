@@ -1,5 +1,6 @@
 package com.example.week8.entity;
 
+import com.example.week8.enums.Status;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -24,7 +25,8 @@ public class Task {
     @Column(length = 150)
     private String taskDescription;
 
-    private String status;
+
+    private Status status;
 
     @CreationTimestamp
     private LocalDate startDate;
@@ -40,10 +42,9 @@ public class Task {
    @ManyToOne
    @JoinColumn(name = "userId")
     private User user;
-
    @PrePersist
     public void prePersist(){
-       this.status = "In_Progress";
+       this.status = Status.InProgress;
    }
 
 }

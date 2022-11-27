@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDate;
 
 @Data
@@ -17,8 +19,6 @@ public class TaskDto {
     private Long userId;
 
     private String title;
-    private String status;
-
 
     private String taskDescription;
 

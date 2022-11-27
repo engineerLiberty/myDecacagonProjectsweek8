@@ -11,16 +11,17 @@ public interface TaskService {
 
     List<Task> findAll();
 
-    Task createTask(TaskDto task);
-
-//    User findLogInUser();
-
     Task updateTask(TaskDto taskDto);
 
-    Task updateStatus(TaskDto taskDto);
-
+    Task createTask(TaskDto taskDto);
 
    void deleteTaskByItId(TaskDto taskDto);
+
+    Task updateTaskToInProgress(TaskDto taskDto);
+
+    Task updateTaskToPending(TaskDto taskDto);
+
+    Task updateTaskToDone(TaskDto taskDto);
 
 
 

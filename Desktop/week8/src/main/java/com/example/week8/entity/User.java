@@ -1,7 +1,9 @@
 package com.example.week8.entity;
 
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.lang.Nullable;
 

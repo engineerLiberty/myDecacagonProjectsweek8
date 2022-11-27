@@ -11,7 +11,6 @@ public class UserDto {
     private String firstName;
     private String lastName;
 
-    @Column(unique = true)
     private String userName;
 
     private String password;
@@ -38,5 +37,4 @@ public class UserDto {
 //"userId":"1",
 //        "title": "Domek",
 //        "taskDescription":"fresh pistle streesing man",
-//        "startDate":"2/2/2020",
-//        "completedDate":"4/06/2022"
+

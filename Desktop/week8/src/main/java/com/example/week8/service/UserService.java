@@ -11,7 +11,6 @@ public interface UserService {
      User signUp(SignUpDto signUpDto);
      User logIn(LogInDto logInDto);
 
-     List<User> findAll();
 
 //     User getUserByUserName(User user);
 //

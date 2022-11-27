@@ -28,11 +28,7 @@ public class UserController {
         userService.logIn(logInDto);
         return new ResponseEntity<>("Login was successful",HttpStatus.ACCEPTED);
     }
-    @GetMapping("/listOfUsers")
-    public ResponseEntity<String> findAllUsers(){
-      userService.findAll();
-        return new ResponseEntity<>("List printed successfully",HttpStatus.ACCEPTED);
-    }
+
 
     @DeleteMapping("/deleteUser")
     public ResponseEntity<String> deleteUser(@RequestBody Long userId) {
