@@ -1,6 +1,7 @@
 package com.example.week8.serviceImpl;
 
 import com.example.week8.dto.TaskDto;
+import com.example.week8.entity.User;
 import com.example.week8.repositories.TaskRepo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ class TaskServiceImplTest {
         dto.setTitle("Test");
         dto.setTaskDescription("testing the create task method");
 
-        assertEquals("Test",task.createTask(dto).getTitle());
+        assertEquals("Test", task.createTask(dto).getTitle());
 
     }
 
@@ -35,7 +36,7 @@ class TaskServiceImplTest {
         update.setTitle("Kings Meal");
         update.setTaskDescription("Serving breakfast");
 
-        assertEquals(13,task.updateTask(update).getTaskId());
+        assertEquals(13, task.updateTask(update).getTaskId());
     }
 
     @Test
@@ -43,7 +44,7 @@ class TaskServiceImplTest {
         TaskDto moveToDone = new TaskDto();
         moveToDone.setUserId(1L);
         moveToDone.setTaskId(13L);
-        assertEquals(13,task.updateTaskToDone(moveToDone).getTaskId());
+        assertEquals(13, task.updateTaskToDone(moveToDone).getTaskId());
     }
 
     @Test
@@ -51,7 +52,7 @@ class TaskServiceImplTest {
         TaskDto moveToPending = new TaskDto();
         moveToPending.setUserId(1L);
         moveToPending.setTaskId(13L);
-        assertEquals(13,task.updateTaskToPending(moveToPending).getTaskId());
+        assertEquals(13, task.updateTaskToPending(moveToPending).getTaskId());
     }
 
     @Test
@@ -59,6 +60,14 @@ class TaskServiceImplTest {
         TaskDto moveToInProgress = new TaskDto();
         moveToInProgress.setUserId(1L);
         moveToInProgress.setTaskId(13L);
-        assertEquals(13,task.updateTaskToInProgress(moveToInProgress).getTaskId());
+        assertEquals(13, task.updateTaskToInProgress(moveToInProgress).getTaskId());
+    }
+
+    @Test
+    void deleteTaskByItId() {
+        TaskDto taskDto = new TaskDto();
+        taskDto.setUserId(1L);
+        taskDto.setTaskId(6L);
+        assertEquals(0, task.deleteTaskByItId(taskDto));
     }
 }

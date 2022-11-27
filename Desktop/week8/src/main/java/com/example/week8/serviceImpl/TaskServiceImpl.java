@@ -92,11 +92,12 @@ public class TaskServiceImpl implements TaskService {
     }
 
 
-    public void deleteTaskByItId(TaskDto taskDto){
+    public short deleteTaskByItId(TaskDto taskDto){
         User user = new User();
         user.setUserId(taskDto.getUserId());
 
        taskRepo.deleteById(taskDto.getTaskId());
+        return 0;
     }
 
 }

@@ -2,7 +2,6 @@ package com.example.week8.service;
 
 import com.example.week8.dto.TaskDto;
 import com.example.week8.entity.Task;
-import com.example.week8.entity.User;
 
 import java.util.List;
 
@@ -15,7 +14,7 @@ public interface TaskService {
 
     Task createTask(TaskDto taskDto);
 
-   void deleteTaskByItId(TaskDto taskDto);
+   short deleteTaskByItId(TaskDto taskDto);
 
     Task updateTaskToInProgress(TaskDto taskDto);
 

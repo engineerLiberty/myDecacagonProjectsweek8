@@ -24,7 +24,7 @@ class UserServiceImplTest {
         SignUpDto signUp = new SignUpDto();
         signUp.setFirstName("liberty");
         signUp.setLastName("Austine");
-        signUp.setUserName("libAustine");
+        signUp.setUserName("AjK");
         signUp.setPassword("1234");
 
         assertEquals("liberty",service.signUp(signUp).getFirstName());
